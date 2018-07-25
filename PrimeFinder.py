@@ -1,3 +1,4 @@
+import time
 # ======================================
 #  Function: Check if a number is prime
 # ======================================
@@ -13,9 +14,12 @@ def checkPrime(number,prime_list):
 PrimeList = [2] # PrimeList starts from 2
 size = input('Enter range for PrimeFinder: ')
 if (size.isdigit()):
+    start = time.time() # start timing
     for i in range(2,int(size)):            
         checkPrime(i,PrimeList)
+    end = time.time()   # stop  timing
     print (len(PrimeList),' prime numbers found in the range')
+    print ('Time consumed: '+str(round(end-start,5))+' sec')
     ans = input('Show prime list? (y/n): ')
     if (ans.lower() == 'y'):
         print (PrimeList)
