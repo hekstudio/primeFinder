@@ -3,12 +3,10 @@ import time
 #  Function: Check if a number is prime
 # ======================================
 def checkPrime(number,prime_list):
-    p_plus = list()
     for p in prime_list:
         if(number % p == 0): # Not prime
             return False
-        p_plus.append(number/p)
-        if(p > p_plus[-1]):
+        if(p > (number/p)):
             prime_list.append(number)
             return True
 # --------------------------------------
