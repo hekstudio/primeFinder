@@ -9,6 +9,14 @@ def checkPrime(number,prime_list):
         if(p > (number/p)):
             prime_list.append(number)
             return True
+# ======================================
+#  Function: Find all <= number
+# ======================================
+def generatePrimes(number):
+    tempList = [2]
+    for i in range(3,number+1):
+        checkPrime(i,tempList)
+    return tempList
 # --------------------------------------
 # Program starts here
 # --------------------------------------
@@ -16,8 +24,9 @@ PrimeList = [2] # PrimeList starts from 2
 size = input('Enter range for PrimeFinder: ')
 if (size.isdigit()):
     start = time.time()
-    for i in range(2,int(size)):            
-        checkPrime(i,PrimeList)
+    # --------------- CORE ---------------
+    PrimeList = generatePrimes(int(size))
+    # --------------- CORE ---------------
     end = time.time()
     print (len(PrimeList),' prime numbers found in the range')
     print ('Time consumed: '+str(round(end-start,5))+' sec')
