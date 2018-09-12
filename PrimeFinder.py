@@ -9,7 +9,7 @@ def checkPrime(number,prime_list):
             prime_list.append(number)
             return True
 # ======================================
-#  Function: Find all <= number
+#  Function: Find all primes <= number
 # ======================================
 def generatePrimes(number):
     tempList = [2]
